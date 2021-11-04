@@ -44,9 +44,12 @@ def parse_template (text):
 def merge(text,inputs):
     return text.format(*inputs)
 
-content = read_template("assets/dark_and_stormy_night_template.txt")
-text,questions=parse_template(content)
-result=welcome(questions,text)
+if __name__=='__main__':
 
-with open('assets/copy.txt', 'w') as f:
-        f.write(result)
+    content = read_template("assets/dark_and_stormy_night_template.txt")
+    text,questions=parse_template(content)
+    result=welcome(questions,text)
+    print (result)
+
+    with open('assets/copy.txt', 'w') as f:
+            f.write(result)
